@@ -31,7 +31,7 @@ function webterminal() {
 * @access public
 */
  function edit_classes(&$out, $id) {
-  require(DIR_MODULES.$this->name.'/classes_edit.inc.php');
+  require(DIR_MODULES.$this->name.'/webterminal.php');
  }
 function saveParams($data=0) {
  $p=array();
