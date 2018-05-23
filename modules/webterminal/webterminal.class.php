@@ -31,7 +31,7 @@ function webterminal() {
 * @access public
 */
  function edit_classes(&$out, $id) {
-  require(DIR_MODULES.$this->name.'/webterminal.php');
+
  }
 function saveParams($data=0) {
  $p=array();
@@ -112,6 +112,7 @@ function run() {
 	
 	
   $this->data=$out;
+//  require(DIR_MODULES.$this->name.'/console.php');	
   $p=new parser(DIR_TEMPLATES.$this->name."/".$this->name.".html", $this->data, $this);
   $this->result=$p->result;
 }
@@ -123,8 +124,8 @@ function run() {
 * @access public
 */
 function admin(&$out) {
-//  require(DIR_MODULES.$this->name.'/webterminal.php');	
-
+  require(DIR_MODULES.$this->name.'/console.php');	
+// require(DIR_MODULES.$this->name.'/webterminal.php');
  }
 	
 	
