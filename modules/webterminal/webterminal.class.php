@@ -123,7 +123,7 @@ function run() {
 * @access public
 */
 function admin(&$out) {
-  require(DIR_MODULES.$this->name.'/webconsole.php');	
+//  require(DIR_MODULES.$this->name.'/webterminal.php');	
 
  }
 	
@@ -142,24 +142,6 @@ function usual(&$out) {
 }
  
  
-/**
-* InData edit/add
-*
-* @access public
-*/
- 
-
-/**
-* InData delete record
-*
-* @access public
-*/
-	
-	
- 	
- 
- 
-
   
   
  
@@ -191,6 +173,7 @@ function usual(&$out) {
 */
  function dbInstall($data) {
 
+}
 }
 // --------------------------------------------------------------------
 //////
