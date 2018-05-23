@@ -62,10 +62,7 @@ function getParams() {
   global $view_mode;
   global $edit_mode;
   global $tab;
-  global $today;
-  global $forecast;
-  global $type;	
-  global $skin;		
+	
 	
   if (isset($id)) {
    $this->id=$id;
@@ -76,23 +73,7 @@ function getParams() {
   if (isset($view_mode)) {
    $this->view_mode=$view_mode;
   }
-if (isset($today)) {
-   $this->today=$today;
-  }	
-	
-if (isset($type)) {
-   $this->type=$type;
-  }		
-	
-if (isset($skin)) {
-   $this->skin=$skin;
-  }		
-	
-	
-if (isset($forecast)) {
-   $this->forecast=$forecast;
-  }		
-	
+
   if (isset($edit_mode)) {
    $this->edit_mode=$edit_mode;
   }
@@ -127,9 +108,6 @@ function run() {
   $out['MODE']=$this->mode;
   $out['ACTION']=$this->action;
   $out['TAB']=$this->tab;
-
-	
-	
   
 	
 	
