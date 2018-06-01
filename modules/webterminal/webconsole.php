@@ -12,7 +12,7 @@ $NO_LOGIN = true;
 // Single-user credentials
 // Example: $USER = 'user'; $PASSWORD = 'password';
 //include_once(DIR_MODULES . 'webterminal/webterminal.class.php');
-echo  'webterminal/webterminal.class.php'
+//sg('test.wt', DIR_MODULES.'webterminal/webterminal.class.php');
 //include_once('/var/www/modules/webterminal/webterminal.class.php');
 //$wt = new webterminal();
 //$wt->getParams();
@@ -20,8 +20,8 @@ echo  'webterminal/webterminal.class.php'
 //$USER = $wt->config['login'];
 //$PASSWORD = $wt->config['pwd'];
 
-$USER = 'pi';
-$PASSWORD = '662583abca';
+//$USER = 'pi';
+//$PASSWORD = '';
 
 
 // Multi-user credentials
