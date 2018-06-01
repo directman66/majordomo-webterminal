@@ -1,17 +1,16 @@
 <?php
 /**
-* webterminal
-* author Sannikov Dmitriy sannikovdi@yandex.ru
-* support page 
+* webterminal 
 * @package project
 * @author Wizard <sergejey@gmail.com>
 * @copyright http://majordomo.smartliving.ru/ (c)
-* @version 0.1 (wizard, 09:04:00 [Apr 04, 2016])
+* @version 0.1 (wizard, 20:06:31 [Jun 01, 2018])
 */
 //
 //
 class webterminal extends module {
 /**
+* webterminal
 *
 * Module class constructor
 *
@@ -20,7 +19,7 @@ class webterminal extends module {
 function webterminal() {
   $this->name="webterminal";
   $this->title="webterminal";
-  $this->module_category="<#LANG_SECTION_APPLICATIONS#>";
+  $this->module_category="<#LANG_SECTION_SYSTEM#>";
   $this->checkInstalled();
 }
 /**
@@ -30,10 +29,7 @@ function webterminal() {
 *
 * @access public
 */
- function edit_classes(&$out, $id) {
-
- }
-function saveParams($data=0) {
+function saveParams($data=1) {
  $p=array();
  if (IsSet($this->id)) {
   $p["id"]=$this->id;
@@ -58,12 +54,12 @@ function saveParams($data=0) {
 */
 function getParams() {
   global $id;
+//  global $login;
+//  global $pwd;
   global $mode;
   global $view_mode;
   global $edit_mode;
   global $tab;
-	
-	
   if (isset($id)) {
    $this->id=$id;
   }
@@ -73,7 +69,6 @@ function getParams() {
   if (isset($view_mode)) {
    $this->view_mode=$view_mode;
   }
-
   if (isset($edit_mode)) {
    $this->edit_mode=$edit_mode;
   }
@@ -90,7 +85,6 @@ function getParams() {
 */
 function run() {
  global $session;
-// global $type;	
   $out=array();
   if ($this->action=='admin') {
    $this->admin($out);
@@ -107,12 +101,7 @@ function run() {
   $out['EDIT_MODE']=$this->edit_mode;
   $out['MODE']=$this->mode;
   $out['ACTION']=$this->action;
-  $out['TAB']=$this->tab;
-  
-	
-	
   $this->data=$out;
-//  require(DIR_MODULES.$this->name.'/console.php');	
   $p=new parser(DIR_TEMPLATES.$this->name."/".$this->name.".html", $this->data, $this);
   $this->result=$p->result;
 }
@@ -124,12 +113,22 @@ function run() {
 * @access public
 */
 function admin(&$out) {
-  require(DIR_MODULES.$this->name.'/console.php');	
-// require(DIR_MODULES.$this->name.'/webterminal.php');
- }
-	
-	
+ $this->getConfig();
+ $out['login'] = $this->config['login'];
+ $out['pwd'] = $this->config['pwd'];
 
+ if ($this->view_mode=='update_settings') {
+	global $login;
+	$this->config['login']=$login;	 
+
+	global $pwd;
+	$this->config['pwd']=$pwd;	 
+   $this->saveConfig();
+   $this->redirect("?");
+ }
+
+
+}
 /**
 * FrontEnd
 *
@@ -138,14 +137,8 @@ function admin(&$out) {
 * @access public
 */
 function usual(&$out) {
-
  $this->admin($out);
 }
- 
- 
-  
-  
- 
 /**
 * Install
 *
@@ -156,32 +149,10 @@ function usual(&$out) {
  function install($data='') {
   parent::install();
  }
-/**
-* Uninstall
-*
-* Module uninstall routine
-*
-* @access public
-*/
- function uninstall() {
- }
-/**
-* dbInstall
-*
-* Database installation routine
-*
-* @access private
-*/
- function dbInstall($data) {
-
-}
-}
 // --------------------------------------------------------------------
-//////
+}
 /*
 *
-* TW9kdWxlIGNyZWF0ZWQgQXByIDA0LCAyMDE2IHVzaW5nIFNlcmdlIEouIHdpemFyZCAoQWN0aXZlVW5pdCBJbmMgd3d3LmFjdGl2ZXVuaXQuY29tKQ==
+* TW9kdWxlIGNyZWF0ZWQgSnVuIDAxLCAyMDE4IHVzaW5nIFNlcmdlIEouIHdpemFyZCAoQWN0aXZlVW5pdCBJbmMgd3d3LmFjdGl2ZXVuaXQuY29tKQ==
 *
 */
-
-
