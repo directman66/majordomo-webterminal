@@ -18,7 +18,7 @@ class webconsole extends module {
 */
 function webconsole() {
   $this->name="webconsole";
-  $this->title="webconsole";
+  $this->title="WebConsole";
   $this->module_category="<#LANG_SECTION_SYSTEM#>";
   $this->checkInstalled();
 }
