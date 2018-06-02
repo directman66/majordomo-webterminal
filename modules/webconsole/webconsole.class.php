@@ -8,7 +8,7 @@
 */
 //
 //
-class webterminal extends module {
+class webconsole extends module {
 /**
 * webterminal
 *
