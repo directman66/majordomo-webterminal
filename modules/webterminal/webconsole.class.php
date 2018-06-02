@@ -16,9 +16,9 @@ class webterminal extends module {
 *
 * @access private
 */
-function webterminal() {
-  $this->name="webterminal";
-  $this->title="webterminal";
+function webconsole() {
+  $this->name="webconsole";
+  $this->title="webconsole";
   $this->module_category="<#LANG_SECTION_SYSTEM#>";
   $this->checkInstalled();
 }
