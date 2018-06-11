@@ -119,7 +119,7 @@ function admin(&$out) {
  $this->getConfig();
  $out['login'] = $this->config['login'];
  $out['pwd'] = $this->config['pwd'];
- $out['type']=$this->config['type'];			
+  $out['type']=$this->config['type'];			
 $out['typefm']=$this->config['typefm'];				
 
  if ($this->view_mode=='update_settings') {
@@ -130,9 +130,10 @@ $out['typefm']=$this->config['typefm'];
 	$this->config['pwd']=$pwd;	 
 	 
 	global $type;
-	$this->config['type']=$type;	 
+	$this->config['type']=$type;	
+	 
 	global $typefm;
-		$this->config['typefm']=$typefm;	 
+	$this->config['typefm']=$typefm;	 
 
 	 
 	 
