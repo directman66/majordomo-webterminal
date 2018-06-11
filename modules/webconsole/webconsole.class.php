@@ -118,7 +118,7 @@ function admin(&$out) {
  $this->getConfig();
  $out['login'] = $this->config['login'];
  $out['pwd'] = $this->config['pwd'];
- $out['type']=$this->type;		
+ $out['type']=$this->config['type'];			
 
  if ($this->view_mode=='update_settings') {
 	global $login;
