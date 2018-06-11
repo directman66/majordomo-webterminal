@@ -60,6 +60,7 @@ function getParams() {
   global $view_mode;
   global $edit_mode;
   global $tab;
+global $type;	
   if (isset($id)) {
    $this->id=$id;
   }
@@ -101,6 +102,7 @@ function run() {
   $out['EDIT_MODE']=$this->edit_mode;
   $out['MODE']=$this->mode;
   $out['ACTION']=$this->action;
+  $out['type']=$this->type;	
   $this->data=$out;
   $p=new parser(DIR_TEMPLATES.$this->name."/".$this->name.".html", $this->data, $this);
   $this->result=$p->result;
@@ -123,6 +125,11 @@ function admin(&$out) {
 
 	global $pwd;
 	$this->config['pwd']=$pwd;	 
+	 
+	global $type;
+	$this->config['TYPE']=$type;	 
+	 
+	 
    $this->saveConfig();
    $this->redirect("?");
  }
