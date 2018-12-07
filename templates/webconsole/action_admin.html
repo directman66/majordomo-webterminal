@@ -28,20 +28,21 @@
  <label class="control-label"> type </label>
  <div class="col-lg-6"><input type="text" class="form-control" name="type" value="[#type#]" class="input"></div>
 </div>	
-
+<!--
 <div class="form-group">
  <label class="control-label"> typefm </label>
  <div class="col-lg-6"><input type="text" class="form-control" name="typefm" value="[#typefm#]" class="input"></div>
 </div>		
+-->
 	
 <br>
  <div class="controls">
 Выберите консоль:	 
 		<select name="type" class="input span2">
-			<option[#if type="elfet"#] selected[#endif#]>elfet
 			<option[#if type="nickola"#] selected[#endif#]>nickola
 			<option[#if type="spyrosoft"#] selected[#endif#]>spyrosoft
 			<option[#if type="alpust"#] selected[#endif#]>alpust				
+			<option[#if type="elfet"#] selected[#endif#]>elfet
 				
 				 
 		
@@ -49,7 +50,7 @@
  </div>
 	
 <br>
-				
+<!--				
  <div class="controls">
 Выберите файловый менеджер:	 
 		<select name="typefm" class="input span2">
@@ -65,6 +66,7 @@
  </div>
 	
 <br>				
+-->
 				<br><br>
 
 <div class="form-actions">
@@ -79,7 +81,7 @@
 <br/>
 <ul class="nav nav-tabs">
 <li [#if TAB=="" || TAB=="console" #] class="active" [#endif#]><a href="?data_source=<#DATA_SOURCE#>&view_mode=&id=<#ID#>&tab=console">Console</a> </li>
-<li [#if TAB=="fm" #] class="active" [#endif#]><a href="?data_source=<#DATA_SOURCE#>&view_mode=&id=<#ID#>&tab=fm">File Manager</a> </li>
+<!--<li [#if TAB=="fm" #] class="active" [#endif#]><a href="?data_source=<#DATA_SOURCE#>&view_mode=&id=<#ID#>&tab=fm">File Manager</a> </li> -->
 <li [#if TAB=="help" #] class="active" [#endif#]><a href="?view_mode=<#VIEW_MODE#>&tab=help">Help</a> </li>	
 	
 </ul>
