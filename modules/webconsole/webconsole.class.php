@@ -119,7 +119,11 @@ function admin(&$out) {
  $this->getConfig();
  $out['login'] = $this->config['login'];
  $out['pwd'] = $this->config['pwd'];
-  $out['type']=$this->config['type'];			
+
+if (!$this->config['type']) {$out['type']='elfet';}
+else {$out['type']=$this->config['type'];}	
+
+$out['type']=$this->config['type'];			
 $out['typefm']=$this->config['typefm'];				
 
  if ($this->view_mode=='update_settings') {
